@@ -7,5 +7,7 @@
     <color name="base_bg">#333333</color>
     <color name="action_bar_text">#FFFFFF</color>
     <color name="skeleton_highlight">#CCCCCC</color>
+    <color name="dark_text">#000000</color>
     <color name="light_bg">#FFFFFF</color>
+    <color name="ratings">#FFDF00</color>
 </resources>

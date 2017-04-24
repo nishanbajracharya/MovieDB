@@ -1,5 +1,6 @@
 package com.nishan.moviedb;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -7,10 +8,14 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    static final Movie[] moviesSkeleton = {
-            new Movie("", "Logan", "Action, Superhero", "9.3/10", "Long Movie Plot Here", "", "", "", "", "", "", "", ""),
+    private Movie[] moviesSkeleton = {
+            new Movie("", "", "", "", "", "", "", "", "", "", "", "", ""),
             new Movie("", "", "", "", "", "", "", "", "", "", "", "", ""),
             new Movie("", "", "", "", "", "", "", "", "", "", "", "", "")
+    };
+
+    static final private Movie[] moviesActual = {
+            new Movie("", "Logan", "Action, Superhero", "8.4", "In the near future, a weary Logan cares for an ailing Professor X somewhere on the Mexican border. However, Logan's attempts to hide from the world and his legacy are upended when a young mutant arrives, pursued by dark forces.", "", "", "", "", "", "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1MjkzMjczMV5BMl5BanBnXkFtZTgwNDk4NjYyMTI@._V1_SX300.jpg", "", "")
     };
 
     @Override
@@ -20,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        ListView movieList = (ListView) findViewById(R.id.movieListItem);
+        final ListView movieList = (ListView) findViewById(R.id.movieListItem);
 
-        movieList.setAdapter(new MovieListAdapter(this, moviesSkeleton));
+        final MovieListAdapter movieListAdapter = new MovieListAdapter(this, moviesActual);
+        movieList.setAdapter(movieListAdapter);
+
     }
 }
