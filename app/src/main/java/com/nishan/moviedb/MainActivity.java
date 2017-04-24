@@ -19,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
             new Movie("", "Power Rangers", "Action, Superhero", "7.1", "A group of high-school kids, who are infused with unique superpowers, harness their abilities in order to save the world.", "", "", "", "", "", "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1MTkxNzc5NF5BMl5BanBnXkFtZTgwOTM2Mzk3MTI@._V1_SX300.jpg", "", ""),
 
+            new Movie("", "Ghost in the Shell", "Action, Crime, Drama", "6.8", "In the near future, Major is the first of her kind: A human saved from a terrible crash, who is cyber-enhanced to be a perfect soldier devoted to stopping the world's most dangerous criminals.", "", "", "", "", "", "https://images-na.ssl-images-amazon.com/images/M/MV5BMzJiNTI3MjItMGJiMy00YzA1LTg2MTItZmE1ZmRhOWQ0NGY1XkEyXkFqcGdeQXVyOTk4MTM0NQ@@._V1_SX300.jpg", "", ""),
+
+            new Movie("", "Ghost in the Shell", "Action, Crime, Drama", "6.8", "In the near future, Major is the first of her kind: A human saved from a terrible crash, who is cyber-enhanced to be a perfect soldier devoted to stopping the world's most dangerous criminals.", "", "", "", "", "", "https://images-na.ssl-images-amazon.com/images/M/MV5BMzJiNTI3MjItMGJiMy00YzA1LTg2MTItZmE1ZmRhOWQ0NGY1XkEyXkFqcGdeQXVyOTk4MTM0NQ@@._V1_SX300.jpg", "", ""),
+
             new Movie("", "Ghost in the Shell", "Action, Crime, Drama", "6.8", "In the near future, Major is the first of her kind: A human saved from a terrible crash, who is cyber-enhanced to be a perfect soldier devoted to stopping the world's most dangerous criminals.", "", "", "", "", "", "https://images-na.ssl-images-amazon.com/images/M/MV5BMzJiNTI3MjItMGJiMy00YzA1LTg2MTItZmE1ZmRhOWQ0NGY1XkEyXkFqcGdeQXVyOTk4MTM0NQ@@._V1_SX300.jpg", "", "")
     };
 
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        myToolbar.setTitle(R.string.display_name);
         setSupportActionBar(myToolbar);
 
         final ListView movieList = (ListView) findViewById(R.id.movieListItem);

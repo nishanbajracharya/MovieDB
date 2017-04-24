@@ -17,7 +17,7 @@
         android:longClickable="false"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:titleTextColor="@color/action_bar_text"></android.support.v7.widget.Toolbar>
+        app:titleTextColor="@color/action_bar_text" />
 
     <ListView
         android:id="@+id/movieListItem"
@@ -27,6 +27,7 @@
         android:layout_below="@+id/my_toolbar"
         android:divider="@color/transparent"
         android:dividerHeight="12dp"
-        android:padding="12dp" />
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"/>
 
 </RelativeLayout>
