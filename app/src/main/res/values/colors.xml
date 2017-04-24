@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4488BB</color>
+    <color name="colorPrimary">#4488bb</color>
     <color name="colorPrimaryDark">#333333</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#00FFFFFF</color>
@@ -10,4 +10,5 @@
     <color name="dark_text">#000000</color>
     <color name="light_bg">#FFFFFF</color>
     <color name="ratings">#FFDF00</color>
+    <color name="list_item_border">#F4F4F4</color>
 </resources>
