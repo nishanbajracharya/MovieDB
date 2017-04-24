@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nishan.moviedb.MainActivity">
+    tools:context="com.nishan.moviedb.MainActivity"
+    android:background="@color/base_bg">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -25,9 +26,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/my_toolbar"
-        android:divider="@color/transparent"
-        android:dividerHeight="12dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"/>
+        android:divider="@color/transparent"/>
 
 </RelativeLayout>

@@ -8,9 +8,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:elevation="1dp"
-        android:background="@color/light_bg">
+        android:background="@color/list_item_bg">
         <ImageView
             android:id="@+id/moviePoster"
             android:layout_width="81dp"
@@ -18,14 +21,16 @@
             android:background="@color/skeleton_highlight"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/moviePoster"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp">
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/moviePoster"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/movieTitle"
@@ -33,34 +38,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:background="@color/skeleton_highlight"
-                android:textColor="@color/dark_text"
+                android:textColor="@color/light_text"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/movieGenre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:background="@color/skeleton_highlight"
-                android:layout_marginBottom="4dp"/>
+                android:textColor="@color/faded_text" />
+
+            <TextView
+                android:id="@+id/moviePlot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp"
+                android:background="@color/skeleton_highlight"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/faded_text" />
 
             <RatingBar
                 android:id="@+id/movieRating"
                 style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:numStars="10"
                 android:rating="0"
-                android:stepSize="0.1"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:id="@+id/moviePlot"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/skeleton_highlight"
-                android:layout_marginBottom="4dp"/>
+                android:stepSize="0.1" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
