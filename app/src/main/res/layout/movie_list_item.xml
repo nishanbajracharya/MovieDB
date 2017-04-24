@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:background="@color/skeleton_highlight"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/moviePoster"
+        android:layout_marginLeft="16dp">
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skeleton_highlight"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/movieGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skeleton_highlight"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/movieRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skeleton_highlight"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/moviePlot"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/skeleton_highlight"
+            android:layout_marginBottom="4dp"/>
+    </LinearLayout>
+</RelativeLayout>

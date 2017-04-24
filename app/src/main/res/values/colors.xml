@@ -6,4 +6,5 @@
     <color name="transparent">transparent</color>
     <color name="base_bg">#333333</color>
     <color name="action_bar_text">#ffffff</color>
+    <color name="skeleton_highlight">#aaaaaa</color>
 </resources>
