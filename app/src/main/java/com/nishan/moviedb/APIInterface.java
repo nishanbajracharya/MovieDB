@@ -8,4 +8,7 @@ public interface APIInterface {
 
     @GET("/")
     Call<SearchResponse> getMovieList(@Query("s") String param);
+
+    @GET("/")
+    Call<Movie> getMovie(@Query("i") String id);
 }

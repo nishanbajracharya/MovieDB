@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
-                Log.d("response", response.toString());
                 ArrayList<MovieList> movies = new ArrayList(response.body().getSearch());
 
                 final MovieListAdapter movieListAdapter = new MovieListAdapter(getBaseContext(), movies);

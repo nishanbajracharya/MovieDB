@@ -26,6 +26,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/my_toolbar"
-        android:divider="@color/transparent"/>
+        android:divider="@color/transparent" />
 
 </RelativeLayout>
