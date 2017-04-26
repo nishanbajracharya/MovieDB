@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/gotham-book.ttf");
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         myToolbar.setTitle(R.string.display_name);
+
         setSupportActionBar(myToolbar);
 
         movieList = (ListView) findViewById(R.id.movieListItem);
@@ -36,7 +41,15 @@ public class MainActivity extends AppCompatActivity {
         final MovieListAdapter movieListAdapter = new MovieListAdapter(this, movieSkeleton);
         movieList.setAdapter(movieListAdapter);
 
-        getMovies("a", 2);
+        // getMovies("a", 2);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        getMovies("a", 1);
 
     }
 

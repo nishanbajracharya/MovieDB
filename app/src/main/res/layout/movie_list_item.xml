@@ -5,30 +5,30 @@
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:elevation="1dp"
-        android:background="@color/list_item_bg">
+        android:background="@color/list_item_bg"
+        android:elevation="2dp">
+
         <ImageView
             android:id="@+id/moviePoster"
             android:layout_width="81dp"
             android:layout_height="120dp"
-            android:background="@color/skeleton_highlight"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"/>
+            android:background="@color/skeleton_highlight"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_margin="8dp"
             android:layout_toEndOf="@+id/moviePoster"
             android:orientation="vertical">
 
@@ -38,11 +38,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:background="@color/skeleton_highlight"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textColor="@color/light_text"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:maxLines="1"
-                android:ellipsize="end"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/movieGenre"
@@ -50,9 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:background="@color/skeleton_highlight"
-                android:textColor="@color/faded_text"
+                android:ellipsize="end"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:textColor="@color/faded_text" />
 
             <TextView
                 android:id="@+id/moviePlot"

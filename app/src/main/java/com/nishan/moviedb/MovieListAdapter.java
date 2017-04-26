@@ -56,27 +56,13 @@ public class MovieListAdapter extends ArrayAdapter<MovieList>{
         ImageView poster = (ImageView) rowView.findViewById(R.id.moviePoster);
 
         title.setText(movies.get(position).getTitle());
-        // genre.setText(movies.get(position).getGenre());
-        // if (movies[position].getRating() != "") rating.setRating(parseFloat(movies[position].getRating()));
-        // plot.setText(movies[position].getPlot());
-
         if (title.getText().toString() != "") {
             title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
-            // genre.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
-            // rating.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
-            // plot.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
-
-            // Drawable progress = rating.getProgressDrawable();
-            // DrawableCompat.setTint(progress, ContextCompat.getColor(getContext(), R.color.ratings));
         }
 
         new DownloadImage(poster).execute(movies.get(position).getPoster());
 
         getMovieInfo(movies.get(position).getImdbID(), genre, rating, plot);
-        // genre.setText(movieInfo.getGenre());
-        // rating.setRating(parseFloat(movieInfo.getImdbRating()));
-        // plot.setText(movieInfo.getPlot());
-
 
         return rowView;
     }
@@ -107,8 +93,6 @@ public class MovieListAdapter extends ArrayAdapter<MovieList>{
                 }
                 if (rating.getRating() != 0) {
                     plot.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
-                    Drawable progress = rating.getProgressDrawable();
-                    DrawableCompat.setTint(progress, ContextCompat.getColor(getContext(), R.color.ratings));
                 }
 
                 plot.setText(movieInfo.getPlot());
@@ -119,7 +103,7 @@ public class MovieListAdapter extends ArrayAdapter<MovieList>{
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(getContext(), "error happen ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getContext().getString(R.string.API_FETCH_FAIL), Toast.LENGTH_LONG).show();
             }
         });
     }
