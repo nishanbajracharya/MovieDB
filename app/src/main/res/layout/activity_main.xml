@@ -18,8 +18,8 @@
         android:longClickable="false"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:titleTextColor="@color/action_bar_text" >
-    </android.support.v7.widget.Toolbar>
+        app:titleTextColor="@color/action_bar_text"
+        android:layout_marginTop="24dp"/>
 
     <ListView
         android:id="@+id/movieListItem"
