@@ -28,6 +28,7 @@ dependencies {
         // exclude Retrofit’s OkHttp dependency module and define your own module import
         exclude module: 'okhttp'
     }
+    compile 'com.android.support:design:25.3.1'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'

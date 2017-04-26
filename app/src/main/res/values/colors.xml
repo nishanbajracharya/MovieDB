@@ -5,7 +5,7 @@
     <color name="colorAccent">#FFDF00</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="base_bg">#333333</color>
-    <color name="action_bar_text">#FFFFFF</color>
+    <color name="action_bar_text">#ffffff</color>
     <color name="skeleton_highlight">#494949</color>
     <color name="dark_text">#000000</color>
     <color name="light_bg">#FFFFFF</color>

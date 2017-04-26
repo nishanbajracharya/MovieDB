@@ -3,6 +3,7 @@ package com.nishan.moviedb;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,20 @@ public class MovieDetailActivity extends AppCompatActivity {
         String id = extras.getString("id");
 
         getMovieInfo(id);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(extras.getString("title"));
+        toolbar.setNavigationIcon(R.drawable.ic_action_arrow_back);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     private void getMovieInfo(String id) {
@@ -49,10 +64,9 @@ public class MovieDetailActivity extends AppCompatActivity {
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieInfo = response.body();
 
-                RelativeLayout movieDetailContainer = (RelativeLayout) findViewById(R.id.movieDetailContainer);
                 ImageView movieDetailBG = (ImageView) findViewById(R.id.movieDetailBG);
 
-                new DownloadImage(movieDetailBG, movieDetailContainer).execute(getHighResPoster(movieInfo.getPoster()));
+                new DownloadImage(movieDetailBG).execute(getHighResPoster(movieInfo.getPoster()));
             }
 
             @Override
