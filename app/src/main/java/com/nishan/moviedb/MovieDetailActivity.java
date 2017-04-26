@@ -49,9 +49,10 @@ public class MovieDetailActivity extends AppCompatActivity {
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 movieInfo = response.body();
 
+                RelativeLayout movieDetailContainer = (RelativeLayout) findViewById(R.id.movieDetailContainer);
                 ImageView movieDetailBG = (ImageView) findViewById(R.id.movieDetailBG);
 
-                new DownloadImage(movieDetailBG).execute(getHighResPoster(movieInfo.getPoster()));
+                new DownloadImage(movieDetailBG, movieDetailContainer).execute(getHighResPoster(movieInfo.getPoster()));
             }
 
             @Override
