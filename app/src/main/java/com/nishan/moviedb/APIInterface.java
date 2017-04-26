@@ -6,8 +6,8 @@ import retrofit2.http.Query;
 
 public interface APIInterface {
 
-    @GET("/")
-    Call<SearchResponse> getMovieList(@Query("s") String param);
+    @GET("/?y=2017&type=movie")
+    Call<SearchResponse> getMovieList(@Query("s") String param, @Query("page") int page);
 
     @GET("/")
     Call<Movie> getMovie(@Query("i") String id);

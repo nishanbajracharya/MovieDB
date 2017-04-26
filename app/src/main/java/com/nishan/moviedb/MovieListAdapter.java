@@ -99,7 +99,12 @@ public class MovieListAdapter extends ArrayAdapter<MovieList>{
                     genre.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
                 }
 
-                if(movieInfo.getImdbRating() != null) rating.setRating(Float.parseFloat(movieInfo.getImdbRating()));
+                try {
+                    rating.setRating(Float.parseFloat(movieInfo.getImdbRating()));
+                } catch (Exception e) {
+                    rating.setVisibility(View.INVISIBLE);
+                    rating.setRating(0);
+                }
                 if (rating.getRating() != 0) {
                     plot.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
                     Drawable progress = rating.getProgressDrawable();

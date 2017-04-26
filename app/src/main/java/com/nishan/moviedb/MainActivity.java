@@ -31,24 +31,22 @@ public class MainActivity extends AppCompatActivity {
 
         movieList = (ListView) findViewById(R.id.movieListItem);
 
-        movieSkeleton.add(new MovieList("", "", "", "", ""));
-        movieSkeleton.add(new MovieList("", "", "", "", ""));
-        movieSkeleton.add(new MovieList("", "", "", "", ""));
+        for(int i = 0; i < 4; i++) movieSkeleton.add(new MovieList("", "", "", "", ""));
 
         final MovieListAdapter movieListAdapter = new MovieListAdapter(this, movieSkeleton);
         movieList.setAdapter(movieListAdapter);
 
-        getMovies("a");
+        getMovies("a", 2);
 
     }
 
-    private void getMovies(String param) {
+    private void getMovies(String searchParam, int page) {
         APIClient apiClient = new APIClient();
         Retrofit retrofit = apiClient.getClient(getBaseContext());
 
         APIInterface client = retrofit.create(APIInterface.class);
 
-        Call<SearchResponse> call = client.getMovieList(param);
+        Call<SearchResponse> call = client.getMovieList(searchParam, page);
 
         call.enqueue(new Callback<SearchResponse>() {
             @Override
