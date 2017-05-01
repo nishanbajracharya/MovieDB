@@ -3,6 +3,8 @@ package com.nishan.moviedb;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,11 +23,9 @@ import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView movieList;
+    private RecyclerView movieList;
 
-    private final ArrayList<MovieList> movieSkeleton = new ArrayList<MovieList>();
-
-
+    private final List<MovieList> movieSkeleton = new ArrayList<MovieList>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(myToolbar);
 
-        movieList = (ListView) findViewById(R.id.movieListItem);
+        movieList = (RecyclerView) findViewById(R.id.movieListItem);
+        movieList.setLayoutManager(new LinearLayoutManager(this));
 
         for(int i = 0; i < 4; i++) movieSkeleton.add(new MovieList("", "", "", "", ""));
 
-        final MovieListAdapter movieListAdapter = new MovieListAdapter(this, movieSkeleton);
+        final MovieListAdapter movieListAdapter = new MovieListAdapter(movieSkeleton, this);
         movieList.setAdapter(movieListAdapter);
 
-        movieList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /* movieList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
                 MovieList movie = (MovieList) adapter.getItemAtPosition(position);
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("title", movie.getTitle());
                 startActivity(i);
             }
-        });
+        });*/
 
     }
 
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
                 ArrayList<MovieList> movies = new ArrayList(response.body().getSearch());
 
-                final MovieListAdapter movieListAdapter = new MovieListAdapter(getBaseContext(), movies);
+                final MovieListAdapter movieListAdapter = new MovieListAdapter(movies, getBaseContext());
 
                 movieList.setAdapter(movieListAdapter);
             }
