@@ -32,7 +32,7 @@ import static java.lang.Float.parseFloat;
  * Created by nishan on 4/24/17.
  */
 
-public class MovieListAdapter extends ArrayAdapter<MovieList>{
+public class MovieListAdapter extends ArrayAdapter<MovieList> {
 
     private ArrayList<MovieList> movies;
 
