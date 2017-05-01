@@ -94,7 +94,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.API_MOVIE_FAIL), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.api_movie_fail), Toast.LENGTH_LONG).show();
             }
         });
 

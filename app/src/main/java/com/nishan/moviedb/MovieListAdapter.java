@@ -48,7 +48,7 @@ class MovieListAdapter extends ArrayAdapter<MovieList> {
         ImageView poster = (ImageView) rowView.findViewById(R.id.moviePoster);
 
         title.setText(movies.get(position).getTitle());
-        if (title.getText().toString() != "") {
+        if (!title.getText().toString().isEmpty()) {
             title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
         }
 
@@ -73,7 +73,7 @@ class MovieListAdapter extends ArrayAdapter<MovieList> {
                 movieInfo = response.body();
 
                 genre.setText(movieInfo.getGenre());
-                if (genre.getText().toString() != "") {
+                if (!genre.getText().toString().isEmpty()) {
                     genre.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
                 }
 
@@ -95,7 +95,7 @@ class MovieListAdapter extends ArrayAdapter<MovieList> {
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(getContext(), getContext().getString(R.string.API_FETCH_FAIL), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getContext().getString(R.string.api_fetch_fail), Toast.LENGTH_LONG).show();
             }
         });
     }
