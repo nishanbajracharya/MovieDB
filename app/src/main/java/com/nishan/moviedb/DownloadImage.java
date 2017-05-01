@@ -10,9 +10,9 @@ import android.widget.RelativeLayout;
 
 import java.io.InputStream;
 
-public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
-    ImageView imageView;
-    RelativeLayout layout = null;
+class DownloadImage extends AsyncTask<String, Void, Bitmap> {
+    private ImageView imageView;
+    private RelativeLayout layout = null;
 
     public DownloadImage(ImageView imageView) {
         this.imageView = imageView;

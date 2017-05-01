@@ -1,12 +1,11 @@
 package com.nishan.moviedb;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class APIClient {
+class APIClient {
     private static Retrofit retrofit = null;
 
     static Retrofit getClient(Context context) {

@@ -3,7 +3,7 @@ package com.nishan.moviedb;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Rating {
+class Rating {
 
     @SerializedName("Source")
     @Expose

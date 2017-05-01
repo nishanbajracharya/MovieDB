@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView movieList;
 
-    final ArrayList<MovieList> movieSkeleton = new ArrayList<MovieList>();
+    private final ArrayList<MovieList> movieSkeleton = new ArrayList<MovieList>();
 
 
 

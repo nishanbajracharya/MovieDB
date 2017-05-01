@@ -2,11 +2,10 @@ package com.nishan.moviedb;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.lang.reflect.Field;
 
-public class TypefaceUtil {
+class TypefaceUtil {
 
     /**
      * Using reflection to override default typeface

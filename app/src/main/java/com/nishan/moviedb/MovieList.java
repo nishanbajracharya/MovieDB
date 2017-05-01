@@ -3,7 +3,7 @@ package com.nishan.moviedb;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MovieList {
+class MovieList {
 
     public MovieList(String title, String year, String imdbID, String type, String poster) {
         this.title = title;
