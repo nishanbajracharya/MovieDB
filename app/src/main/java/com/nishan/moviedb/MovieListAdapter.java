@@ -96,7 +96,7 @@ public class MovieListAdapter extends ArrayAdapter<MovieList>{
                 }
 
                 plot.setText(movieInfo.getPlot());
-                if (plot.getText().toString() != "") {
+                if (!plot.getText().toString().isEmpty()) {
                     plot.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
                 }
             }

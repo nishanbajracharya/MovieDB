@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     final ArrayList<MovieList> movieSkeleton = new ArrayList<MovieList>();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -3,4 +3,5 @@
     <string name="display_name">Movie Database</string>
     <string name="API_BASE_URL">http://www.omdbapi.com</string>
     <string name="API_FETCH_FAIL">Failed to get list of movies</string>
+    <string name="API_MOVIE_FAIL">Failed to get movie details</string>
 </resources>

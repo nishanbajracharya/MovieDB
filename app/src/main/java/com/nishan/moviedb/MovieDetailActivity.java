@@ -65,13 +65,38 @@ public class MovieDetailActivity extends AppCompatActivity {
                 movieInfo = response.body();
 
                 ImageView movieDetailBG = (ImageView) findViewById(R.id.movieDetailBG);
+                ImageView movieDetailPoster = (ImageView) findViewById(R.id.movieDetailPoster);
 
                 new DownloadImage(movieDetailBG).execute(getHighResPoster(movieInfo.getPoster()));
+                new DownloadImage(movieDetailPoster).execute(movieInfo.getPoster());
+
+                TextView movieDetailTitle = (TextView) findViewById(R.id.movieDetailTitle);
+                movieDetailTitle.setText(movieInfo.getTitle());
+                movieDetailTitle.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
+
+                TextView movieDetailMetaInfo = (TextView) findViewById(R.id.movieDetailMetaInfo);
+                movieDetailMetaInfo.setText(movieInfo.getReleased() + " | " + movieInfo.getRuntime());
+                movieDetailMetaInfo.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
+
+                TextView movieDetailGenre = (TextView) findViewById(R.id.movieDetailGenre);
+                movieDetailGenre.setText(movieInfo.getGenre());
+                movieDetailGenre.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
+
+                RatingBar rating = (RatingBar) findViewById(R.id.movieDetailRating);
+                try {
+                    rating.setRating(Float.parseFloat(movieInfo.getImdbRating()));
+                } catch (Exception e) {
+                    rating.setVisibility(View.INVISIBLE);
+                    rating.setRating(0);
+                }
+
+                TextView movieDetailRatingText = (TextView) findViewById(R.id.movieDetailRatingText);
+                movieDetailRatingText.setText(movieInfo.getImdbRating() + "/10");
             }
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.API_FETCH_FAIL), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.API_MOVIE_FAIL), Toast.LENGTH_LONG).show();
             }
         });
 
