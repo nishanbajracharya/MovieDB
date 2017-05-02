@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView movieList;
 
-    private final List<MovieList> movieSkeleton = new ArrayList<MovieList>();
+    private final List<MovieList> movieSkeleton = new ArrayList<>();
 
     private ArrayList<MovieList> movies;
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
-                movies = new ArrayList(response.body().getSearch());
+                movies = new ArrayList<>(response.body().getSearch());
 
                 final MovieListAdapter movieListAdapter = new MovieListAdapter(movies, getBaseContext());
 

@@ -23,19 +23,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-/**
- * Created by nishan on 4/24/17.
- */
-
 class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ItemHolder> {
 
-    private List<MovieList> movies;
+    private final List<MovieList> movies;
 
     private Movie movieInfo;
 
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
 
-    private Context context;
+    private final Context context;
 
     public interface ItemClickListener {
         void onClick(View view, int position);
@@ -86,11 +82,11 @@ class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ItemHolder>
     }
 
     class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView title;
-        TextView genre;
-        RatingBar rating;
-        TextView plot;
-        ImageView poster;
+        final TextView title;
+        final TextView genre;
+        final RatingBar rating;
+        final TextView plot;
+        final ImageView poster;
         ItemClickListener clickListener;
 
         public ItemHolder(View itemView) {

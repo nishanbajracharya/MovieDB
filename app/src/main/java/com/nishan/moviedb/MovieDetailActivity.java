@@ -93,7 +93,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                 }
 
                 TextView movieDetailRatingText = (TextView) findViewById(R.id.movieDetailRatingText);
-                movieDetailRatingText.setText(movieInfo.getImdbRating() + "/10");
+                movieDetailRatingText.setText(getString(R.string.rating_text, movieInfo.getImdbRating()));
             }
 
             @Override

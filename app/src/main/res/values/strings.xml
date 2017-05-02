@@ -4,4 +4,6 @@
     <string name="api_base_url">http://www.omdbapi.com</string>
     <string name="api_fetch_fail">Failed to get list of movies</string>
     <string name="api_movie_fail">Failed to get movie details</string>
+    <string name="image_description">Image</string>
+    <string name="rating_text">%s/10</string>
 </resources>

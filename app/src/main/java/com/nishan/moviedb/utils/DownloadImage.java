@@ -3,24 +3,16 @@ package com.nishan.moviedb.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import java.io.InputStream;
 
 public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
-    private ImageView imageView;
-    private RelativeLayout layout = null;
+    private final ImageView imageView;
 
     public DownloadImage(ImageView imageView) {
         this.imageView = imageView;
-    }
-
-    public DownloadImage(ImageView imageView, RelativeLayout layout) {
-        this.imageView = imageView;
-        this.layout = layout;
     }
 
     protected Bitmap doInBackground(String... urls) {
@@ -38,10 +30,5 @@ public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
 
     protected void onPostExecute(Bitmap result) {
         imageView.setImageBitmap(result);
-
-        if(layout != null) {
-            Drawable bg = imageView.getDrawable();
-            layout.setBackground(bg);
-        }
     }
 }
