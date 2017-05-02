@@ -1,17 +1,17 @@
 package com.nishan.moviedb;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import com.nishan.moviedb.retrofit.APIClient;
+import com.nishan.moviedb.retrofit.APIInterface;
+import com.nishan.moviedb.utils.TypefaceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView movieList;
 
     private final List<MovieList> movieSkeleton = new ArrayList<MovieList>();
+
+    private ArrayList<MovieList> movies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,18 +53,6 @@ public class MainActivity extends AppCompatActivity {
         final MovieListAdapter movieListAdapter = new MovieListAdapter(movieSkeleton, this);
         movieList.setAdapter(movieListAdapter);
 
-        /* movieList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
-                MovieList movie = (MovieList) adapter.getItemAtPosition(position);
-
-                Intent i = new Intent(getApplicationContext(), MovieDetailActivity.class);
-                i.putExtra("id", movie.getImdbID());
-                i.putExtra("title", movie.getTitle());
-                startActivity(i);
-            }
-        });*/
-
     }
 
     @Override
@@ -84,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
-                ArrayList<MovieList> movies = new ArrayList(response.body().getSearch());
+                movies = new ArrayList(response.body().getSearch());
 
                 final MovieListAdapter movieListAdapter = new MovieListAdapter(movies, getBaseContext());
 
@@ -93,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SearchResponse> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "error happen ", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, getApplicationContext().getString(R.string.api_fetch_fail), Toast.LENGTH_LONG).show();
             }
         });
     }
+
 }

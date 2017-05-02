@@ -1,4 +1,4 @@
-package com.nishan.moviedb;
+package com.nishan.moviedb.utils;
 
 
 import android.graphics.Bitmap;
@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 
 import java.io.InputStream;
 
-class DownloadImage extends AsyncTask<String, Void, Bitmap> {
+public class DownloadImage extends AsyncTask<String, Void, Bitmap> {
     private ImageView imageView;
     private RelativeLayout layout = null;
 

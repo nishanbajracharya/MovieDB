@@ -10,6 +10,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nishan.moviedb.retrofit.APIClient;
+import com.nishan.moviedb.retrofit.APIInterface;
+import com.nishan.moviedb.utils.DownloadImage;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
